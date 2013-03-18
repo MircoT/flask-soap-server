@@ -12,9 +12,7 @@ enterprise = Enterprise(app)
 String = enterprise._sp.String
 Integer = enterprise._sp.Integer
 Boolean = enterprise._sp.Boolean
-AnyAsDict = enterprise._sp.AnyAsDict
 Array = enterprise._scls.Array
-Class = enterprise._scls.Base
 
 class Service(enterprise.SOAPService):
     """Soap Service Class
