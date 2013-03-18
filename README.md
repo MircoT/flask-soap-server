@@ -1,6 +1,7 @@
 # flask-soap-server
 
-A simple example of how to use SOAP with Flask.
+A simple example of how to use SOAP with Flask.  
+
 With this project you have a base soap server with 
 a javascript client.
 
@@ -14,7 +15,7 @@ pip install -r requirements.txt
 
 You may need to install these libraries for a correct installation of all dependencies:
 
-libxsl1-dev
+libxsl1-dev  
 libxml2-dev
 
 ## How to test
@@ -31,8 +32,8 @@ You can see the example page at `http://localhost:5000/` with your browser.
 
 ## Authors
 
-[Gabriele](https://github.com/Gabriele91))
-[Mirco](https://github.com/MircoT))
+[Gabriele](https://github.com/Gabriele91)  
+[Mirco](https://github.com/MircoT)
 
 ## License
 
