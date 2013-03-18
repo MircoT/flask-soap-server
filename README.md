@@ -18,6 +18,8 @@ You may need to install these libraries for a correct installation of all depend
 libxsl1-dev  
 libxml2-dev
 
+**Note**: library refer on Ubuntu package name, please search an equivalent for yours OS.
+
 ## How to test
 
 Just type the command below in the main directory:
