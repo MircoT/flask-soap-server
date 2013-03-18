@@ -7,7 +7,7 @@ a javascript client.
 
 ## Dependencies
 
-All dependencies are written in requirements.txt and you can install them with :
+All dependencies are written in requirements.txt and you can install them with:
 
 ```bash
 pip install -r requirements.txt
