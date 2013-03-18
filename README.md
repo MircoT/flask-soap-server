@@ -1,4 +1,4 @@
 flask-soap-server
 =================
 
-A simple soap server with flask
+A simple example of how to use SOAP with Flask

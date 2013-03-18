@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+    <title>Flask Soap Server</title>  
+    </head>              
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='SoapApi.js')}}"></script>
+        <script type="text/javascript">            
+            $(document).ready(function() {
+				$("#echoText").val("Hello World!");
+				$("#X").val("5");
+				$("#Y").val("5");
+				$("#submit").click(function () {
+					var soap = SoapApi();
+					var message = soap.createSoapMessage("MyNS","echo",{"mystring" : ["string", $("#echoText").val()]});
+					soap.sendMessage(message, function(res){
+						$("#echo").text(res["#text"]);
+					});
+					
+					message = soap.createSoapMessage("MyNS","sum",{"x" : ["integer", $("#X").val()],"y" : ["integer", $("#Y").val()]});
+					soap.sendMessage(message, function(res){
+						$("#sum").text(res["#text"]);
+					});
+					message = soap.createSoapMessage("MyNS","equal",{"x" : ["integer", $("#X").val()],"y" : ["integer", $("#Y").val()]});
+					soap.sendMessage(message, function(res){
+						$("#equal").text(res["#text"]);
+					});
+					
+					var message = soap.createSoapMessage("MyNS","createArray",{"lenA" : ["integer", $("#X").val()]});
+					soap.sendMessage(message, function(res){
+						var string = "[";
+						for (a in res) {
+							for (e in res[a]) {
+								string += res[a][e]["#text"];
+								string += ",";
+							}	
+						}
+						string = string.substring(0,string.length - 1) + "]";
+						$("#createArray").text(string);
+					});
+				});
+			});
+        </script>
+        <link type="text/css" rel="stylesheet" media="screen" href="{{url_for('static', filename='normalize.css')}}"></link>     
+    <body>
+		<div style="padding: 10px;">
+			<form id="myForm">
+				<div>
+					<span>string</span>
+					<input type="text" id="echoText"/></div>
+				<div>
+					<span>X value</span>
+					<input type="text" id="X"/></div>
+				<div>
+					<span>Y value</span>
+					<input type="text" id="Y"/></div>
+				<div></div>
+			</form>
+			<span><Button id="submit" style="margin-top: 10px;">Submit</Button></span>
+			<div style="padding-top: 10px;">
+				<div>echo(string) : <span id="echo"></span></div>
+				<div>sum(X,Y) : <span id="sum"></span></div>
+				<div>equal(X,Y) : <span id="equal"></span></div>
+				<div>createArray(X) : <span id="createArray"></span></div>
+			</div>
+		</div>
+	</body>
+</html>
