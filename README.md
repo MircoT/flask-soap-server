@@ -2,8 +2,7 @@
 
 A simple example of how to use SOAP with Flask.  
 
-With this project you have a base soap server with 
-a javascript client.
+With this project you have a base soap server written in python with a javascript client.
 
 ## Dependencies
 
