@@ -3,9 +3,9 @@ Flask-Enterprise==1.0
 Jinja2==2.6
 Werkzeug==0.8.3
 argparse==1.2.1
-distribute==0.6.24
+distribute
 honcho==0.3.1
-lxml==3.1.0
+lxml
 pytz==2013b
 soaplib==2.0.0-beta2
 suds==0.4
